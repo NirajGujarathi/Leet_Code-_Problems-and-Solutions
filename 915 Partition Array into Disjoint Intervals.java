@@ -24,7 +24,7 @@ Explanation: left = [1,1,1,0], right = [6,12]
 class Solution {
     public int partitionDisjoint(int[] nums) {
         
-        //Approach 1 
+        //Approach 1 Time O(n) and space O(1)
         //kadance approach
         int maxtilli=nums[0];
         int maxsofar=nums[0];
@@ -43,7 +43,7 @@ class Solution {
         return partition+1;
         
         
-        //Approach 2
+        //Approach 2  Time O(n) and space O(2n)
 //         int [] left=new int[nums.length];
 //         int [] right=new int[nums.length];
 //         //left max
