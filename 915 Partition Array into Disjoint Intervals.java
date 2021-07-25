@@ -1,3 +1,5 @@
+ // approach 1 is similar to stock buy and sell here instead of tracking minsofar we track the max so far so that we can partition the array from the previously maximum point 
+
 /*
 Given an array nums, partition it into two (contiguous) subarrays left and right so that:
 
@@ -26,6 +28,7 @@ class Solution {
         
         //Approach 1 Time O(n) and space O(1)
         //kadance approach
+    
         int maxtilli=nums[0];
         int maxsofar=nums[0];
         int partition=0;
