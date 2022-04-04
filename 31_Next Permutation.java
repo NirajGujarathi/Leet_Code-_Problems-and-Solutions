@@ -53,3 +53,44 @@ Input: nums = [1]
 Output: [1]
 
 */
+
+// java
+public class Solution {
+    public void nextPermutation(int[] nums) {
+        int i = nums.length - 2;
+        while(i>=0 && nums[i]>=nums[i+1]){
+            i--;
+        }
+        if(i>=0){
+            int j=nums.length-1;
+            while(nums[j]<=nums[i]){
+                j--; 
+                // if element is smaller just decreement 
+                // also if we start search from end of array any way we will get just larger tah nums[i] from end quickly         // beCUSE EARLIER WE STARTED SEARCH FOR FIRST DECREASING ELEMENT 
+            }
+            swap(nums,i,j);
+            reversearr(nums,i+1); //leaving that element from rright onward reverse array 
+            
+        }
+        else{
+//             only reverse arr
+//             if all element are in non increasing fashion then i==-1;
+//             and we just want to reverse whole array to get very first combination
+            reversearr(nums,i+1);
+        }
+        
+    }
+    private void reversearr(int[] arr, int st){
+        int i=st;
+        int j= arr.length-1;
+        while(i<j){
+            swap(arr,i++,j--);
+        }
+    }
+    
+    private void swap(int []nums,int i,int j){
+        int t=nums[i];
+        nums[i]=nums[j];
+        nums[j]=t;
+    }
+}
